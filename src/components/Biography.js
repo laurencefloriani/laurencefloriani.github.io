@@ -18,7 +18,7 @@ export default function Biography() {
                         </a>
                     </View>
                     <View>
-                        <a style={{paddingLeft: 10}} href={"mailto:laurenceflo@hotmail.com"}>
+                        <a style={{paddingLeft: 10}} href={"mailto:laurencefloAThotmail.com"}>
                             <TitleText><FiMail /></TitleText>
                         </a>
                     </View>
