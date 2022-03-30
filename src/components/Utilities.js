@@ -21,7 +21,7 @@ export const EDUCATIONS = [
     },
     {
         level: "CESS",
-        years: "2015",
+        years: "2012",
         place: "IESPP",
         description:"Durant mes années de secondaire, j'ai commencé à éveiller mon esprit critique et scientifique. " +
                     "J'ai acquis les principales notions qui m'ont permis d'accéder à la formation universitaire.",
