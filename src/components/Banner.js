@@ -6,6 +6,7 @@ import {useNavigate} from "react-router-dom";
 import {FiHome} from "react-icons/fi";
 import {Text, View} from "react-native-web";
 import { IconContext } from "react-icons";
+import "../styles/Banner.css";
 
 const options = [
     'Éducation',
@@ -90,8 +91,8 @@ export default function Banner(props) {
                                 Voyez mon CV
                                 <img src={"right_arrow.png"} width={50} height={20} alt="right_arrow"/>
                             </Typography>
-                            <a href={"/LaurenceDaisyFloriani.pdf"} target="_blank">
-                                <img src={"logo_cv.png"} alt="logo-cv" className="logo-cv" height={50}/>
+                            <a href={"/LaurenceDaisyFloriani.pdf"} target="_blank" rel="noreferrer">
+                                <img src={"logo_cv.png"} alt="logo-cv" className="link" height={50}/>
                             </a>
                         </>:
                         <button onClick={() => navigate("/")} >
@@ -100,7 +101,7 @@ export default function Banner(props) {
                                     <IconContext.Provider
                                         value={{ color: 'black' }}
                                     >
-                                    <FiHome />
+                                    <FiHome className="link" />
                                     </IconContext.Provider>
                                 </Text>
                             </View>

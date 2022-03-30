@@ -3,10 +3,19 @@ import "../styles/Biography.css"
 import TitleText from "./TitleText";
 import InnerText from "./InnerText";
 import {View} from "react-native-web";
+import {PADDING_BOTTOM, PADDING_LEFT, PADDING_RIGHT, PADDING_TOP} from "../DefaultVars";
 
 export default function Biography() {
     return (
-        <View style={{flexDirection: 'row', alignItems: 'left'}}>
+        <View
+            style={{
+                flexDirection: 'row',
+                alignItems: 'left',
+                paddingLeft: PADDING_LEFT,
+                paddingRight: PADDING_RIGHT,
+                paddingTop: PADDING_TOP,
+                paddingBottom: PADDING_BOTTOM
+        }}>
             <View style={{flexDirection: 'column', alignItems: 'center'}}>
                 <View>
                     <img src={"profil.jpg"} alt="profil" className="profil"/>
@@ -30,7 +39,9 @@ export default function Biography() {
                 </View>
             </View>
             <View style={{flexDirection: 'column', paddingLeft: 15, flex: 1}}>
-                <View>
+                <View style={{
+                    alignItems: 'center',
+                }}>
                     <TitleText>Bienvenue sur mon site !</TitleText>
                 </View>
                 <View>

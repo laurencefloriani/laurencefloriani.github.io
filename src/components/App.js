@@ -5,7 +5,6 @@ export default function App() {
     return (
         <div className="app-container" >
             <Banner isHome={true}/>
-            <br/>
             <Biography />
         </div>
     );

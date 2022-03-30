@@ -5,8 +5,8 @@ import Project from "./Project";
 import Select from 'react-select';
 import {useState} from "react";
 import InnerText from "./InnerText";
-import "../styles/Projects.css";
 import {View} from "react-native-web";
+import {PADDING_BOTTOM, PADDING_LEFT, PADDING_RIGHT, PADDING_TOP} from "../DefaultVars";
 
 export default function Projects() {
     let options = [];
@@ -47,35 +47,49 @@ export default function Projects() {
             {
                 setLangages() // Not work correctly if set in useEffect
             }
-            <View style={{padding: 10}}>
-                <InnerText>Sélectionnez des languages ci-après pour voir les projets associés.</InnerText>
+            <div style={{
+                paddingTop: PADDING_TOP,
+                paddingBottom: PADDING_BOTTOM,
+                paddingLeft: PADDING_LEFT,
+                paddingRight: PADDING_RIGHT,
+            }}>
+                <View style={{paddingBottom: PADDING_BOTTOM}}>
+                    <InnerText>Sélectionnez des languages ci-après pour voir les projets associés.</InnerText>
+                </View>
+                <Select
+                    value={options.filter(obj => selectedValue.includes(obj.value))}
+                    isMulti
+                    name="langages"
+                    options={options}
+                    className="project-select"
+                    onChange={handleChange}
+                />
+            </div>
+            <View style={{
+                paddingTop: PADDING_TOP,
+                paddingBottom: PADDING_BOTTOM,
+                paddingLeft: PADDING_LEFT,
+                paddingRight: PADDING_RIGHT,
+            }}>
+                {
+                    PROJECTS.map((proj, index) => {
+                        if (projectContainsLangage(proj)) {
+                            return <Project
+                                key={`project-${index}`}
+                                name={proj.name}
+                                years={proj.years}
+                                url={proj.url}
+                                langages={Array.from(proj.langages)}
+                                description={proj.description}
+                                img={proj.img}
+                                hasPDF={proj.hasPDF}
+                                pdf={proj.pdf} />
+                        } else {
+                            return null;
+                        }
+                    })
+                }
             </View>
-            <Select
-                value={options.filter(obj => selectedValue.includes(obj.value))}
-                isMulti
-                name="langages"
-                options={options}
-                className="project-select"
-                onChange={handleChange}
-            />
-            {
-                PROJECTS.map((proj) => {
-                    if (projectContainsLangage(proj)) {
-                        return <Project
-                            key={`project-${proj.name}`}
-                            name={proj.name}
-                            years={proj.years}
-                            url={proj.url}
-                            langages={Array.from(proj.langages)}
-                            description={proj.description}
-                            img={proj.img}
-                            hasPDF={proj.hasPDF}
-                            pdf={proj.pdf} />
-                    } else {
-                        return null;
-                    }
-                })
-            }
         </div>
     )
 }
