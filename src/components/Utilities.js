@@ -64,7 +64,7 @@ export const ACTIVITIES = [
 
 export const PROJECTS = [
     {
-        name: "Interface utilisateur WEB pour le serveur PHOEG",
+        name: "UI WEB pour PHOEG",
         years: "2022",
         url: "https://github.com/laurencefloriani/phoeg-react",
         langages: new Set(["JavaScript", "CSS", "React"]),
@@ -76,7 +76,7 @@ export const PROJECTS = [
         pdf: ""
     },
     {
-        name: "Générateur nombre aléatoire",
+        name: "Générateur de nombres",
         years: "2021",
         url: "https://github.com/laurencefloriani/simulation",
         langages: new Set(["Python"]),
@@ -110,7 +110,7 @@ export const PROJECTS = [
         pdf: "bioinfo.pdf"
     },
     {
-        name: "Calcul de communautés dans de grands réseaux",
+        name: "Communauté dans de grands réseaux",
         years: "2019",
         url: "https://github.com/laurencefloriani/OptiCombProjet",
         langages: new Set(["Java"]),
@@ -122,7 +122,7 @@ export const PROJECTS = [
         pdf: ""
     },
     {
-        name: "Création d'un jeu inspiré de Slay",
+        name: "Jeu inspiré de Slay",
         years: "2019",
         url: "https://github.com/lavendthomas/Slay",
         langages: new Set(["Java", "LibGDX"]),
@@ -134,7 +134,7 @@ export const PROJECTS = [
         pdf: ""
     },
     {
-        name: "Convertisseur d'algèbre relationnelle en requête SQL",
+        name: "Convertisseur SQL",
         years: "2018",
         url: "https://github.com/laurencefloriani/projetBase",
         langages: new Set(["Python", "SQLite3"]),

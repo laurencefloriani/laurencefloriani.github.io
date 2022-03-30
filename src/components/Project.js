@@ -10,13 +10,13 @@ export default function Project(props) {
         <div>
             <SectionSubTitle title={props.name} appendix={props.years}/>
             <View>
-                {props.langages.map((lang) => {
-                    return <InnerText isCode={true}>{lang} </InnerText>;
+                {props.langages.map((lang, index) => {
+                    return <InnerText key={`lang-${index}`} isCode={true}>{lang} </InnerText>;
                 })}
             </View>
             <View style={{flexDirection: 'row', alignItems: 'left'}}>
                 <View>
-                    <a href={props.url} target="_blank">
+                    <a href={props.url} target="_blank" rel="noreferrer">
                         <img src={props.img} alt={props.img} style={{width: 150, height: 150}}/>
                     </a>
                 </View>
@@ -25,13 +25,13 @@ export default function Project(props) {
                 </View>
                 <View style={{flexDirection: 'column', padding: 10}}>
                     <View>
-                        <a href={props.url} target="_blank">
+                        <a href={props.url} target="_blank" rel="noreferrer">
                             <TitleText><FiGithub /></TitleText>
                         </a>
                     </View>
                     {props.hasPDF ?
                         <View>
-                            <a href={props.pdf} target="_blank">
+                            <a href={props.pdf} target="_blank" rel="noreferrer">
                                 <TitleText><MdOutlinePictureAsPdf /></TitleText>
                             </a>
                         </View> : null

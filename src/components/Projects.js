@@ -11,6 +11,7 @@ import {PADDING_BOTTOM, PADDING_LEFT, PADDING_RIGHT, PADDING_TOP} from "../Defau
 export default function Projects() {
     let options = [];
     const [selectedValue, setSelectedValue] = useState([]);
+    const [isFirst, setIsFirst] = useState(true);
 
     const handleChange = (event) => {
         setSelectedValue(Array.isArray(event) ? event.map(x => x.value) : []);
@@ -27,6 +28,10 @@ export default function Projects() {
         }
         for (let langage of results) {
             options.push({value: langage, label: langage})
+        }
+        if (isFirst) {
+            setSelectedValue(options.map(x => x.value));
+            setIsFirst(false);
         }
     }
 
