@@ -1,9 +1,14 @@
-import {Text} from "react-native-web";
+import { Typography } from "@mui/material";
 
-export default function TitleText (props) {
-    return (
-        <Text style={{ fontSize: 50, fontWeight: 'bold'}}>
-            {props.children}
-        </Text>
-    )
+export default function TitleText({ children }) {
+  return (
+    <Typography
+      variant="h2"
+      style={{
+        fontWeight: "bold",
+      }}
+    >
+      {children}
+    </Typography>
+  );
 }
